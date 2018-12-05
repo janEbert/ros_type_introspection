@@ -146,7 +146,6 @@ inline std::ostream& operator<<(std::ostream &os, const ROSType& t )
 inline BuiltinType toBuiltinType(const absl::string_view& s) {
   static std::map<absl::string_view, BuiltinType> string_to_builtin_map {
     { "bool", BOOL },
-    { "byte", BYTE },
     { "char", CHAR },
     { "uint8", UINT8 },
     { "uint16", UINT16 },

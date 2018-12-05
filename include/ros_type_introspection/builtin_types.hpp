@@ -45,7 +45,7 @@ namespace RosIntrospection{
 
 
 enum BuiltinType {
-  BOOL , BYTE, CHAR,
+  BOOL , CHAR,
   UINT8, UINT16, UINT32, UINT64,
   INT8, INT16, INT32, INT64,
   FLOAT32, FLOAT64,
@@ -58,7 +58,6 @@ enum BuiltinType {
 inline int builtinSize(const BuiltinType c) {
   switch (c) {
   case BOOL:
-  case BYTE:
   case INT8:
   case CHAR:
   case UINT8:    return 1;
@@ -82,7 +81,6 @@ inline const char* toStr(const BuiltinType& c)
 {
   switch (c) {
   case BOOL:     return "BOOL";
-  case BYTE:     return "BYTE";
   case INT8:     return "INT8";
   case CHAR:     return "CHAR";
   case UINT8:    return "UINT8";
@@ -115,8 +113,7 @@ template <typename T> BuiltinType getType()
 
 template <> inline BuiltinType getType<bool>()  {  return BOOL; }
 
-template <> inline BuiltinType getType<unsigned char>()  {  return BYTE; }
-template <> inline BuiltinType getType<char>()           {  return CHAR; }
+template <> inline BuiltinType getType<char>() {  return CHAR; }
 
 template <> inline BuiltinType getType<int8_t>()  {  return INT8; }
 template <> inline BuiltinType getType<int16_t>() {  return INT16; }

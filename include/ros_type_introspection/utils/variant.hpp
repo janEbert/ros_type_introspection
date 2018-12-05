@@ -273,7 +273,6 @@ template<typename DST> inline DST Variant::convert() const
   case INT64:  convert_impl<int64_t, DST>(*reinterpret_cast<const int64_t*>( raw_data), target  ); break;
 
   case BOOL:
-  case BYTE:
   case UINT8:   convert_impl<uint8_t,  DST>(*reinterpret_cast<const uint8_t*>( raw_data), target  ); break;
 
   case UINT16:  convert_impl<uint16_t, DST>(*reinterpret_cast<const uint16_t*>( raw_data), target  ); break;
@@ -314,7 +313,6 @@ template<> inline double Variant::convert() const
   case INT64:  convert_impl<int64_t, double>(*reinterpret_cast<const int64_t*>( raw_data), target  ); break;
 
   case BOOL:
-  case BYTE:
   case UINT8:   convert_impl<uint8_t,  double>(*reinterpret_cast<const uint8_t*>( raw_data), target  ); break;
 
   case UINT16:  convert_impl<uint16_t, double>(*reinterpret_cast<const uint16_t*>( raw_data), target  ); break;

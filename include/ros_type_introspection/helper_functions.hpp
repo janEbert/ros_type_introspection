@@ -114,7 +114,6 @@ inline Variant ReadFromBufferToVariant(BuiltinType id, const absl::Span<uint8_t>
   switch(id)
   {
   case BOOL: return ReadFromBufferToVariant<bool>(buffer,offset);
-  case BYTE:
   case UINT8:  return ReadFromBufferToVariant<uint8_t>(buffer,offset);
   case UINT16: return ReadFromBufferToVariant<uint16_t>(buffer,offset);
   case UINT32: return ReadFromBufferToVariant<uint32_t>(buffer,offset);
